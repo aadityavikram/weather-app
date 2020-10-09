@@ -1,7 +1,7 @@
 const getWeatherInfo = (location, message_1, message_2, message_3, message_4) => {
     message_1.textContent = 'Loading....'
     message_2.textContent = message_3.textContent = message_4.textContent = ''
-    fetch('http://localhost:3000/weather?address=' + decodeURIComponent(location)).then((response) => {
+    fetch('/weather?address=' + decodeURIComponent(location)).then((response) => {
     response.json().then((data) => {
         if(data.error) {
             message_1.textContent = data.error

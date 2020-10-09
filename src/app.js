@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode.js')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // paths for express
 const staticPath = path.join(__dirname, '../static')
@@ -77,7 +78,7 @@ const errorPage = (req, res) => {
 
 // message that gets logged when server starts running
 const serverMessage = () => {
-    console.log('Server is running at port 3000')
+    console.log('Server is running at port ' + port)
 }
 
 // setting up all pages
@@ -90,4 +91,4 @@ app.get('/help', helpPage)
 app.get('/weather', weatherPage)
 app.get('/help/*', helpErrorPage)
 app.get('*', errorPage)
-app.listen(3000, serverMessage)
+app.listen(port, serverMessage)

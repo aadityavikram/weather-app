@@ -1,5 +1,3 @@
-console.log('Client JS Loaded!')
-
 const getWeatherInfo = (location, message_1, message_2, message_3, message_4) => {
     message_1.textContent = 'Loading....'
     message_2.textContent = message_3.textContent = message_4.textContent = ''
@@ -13,7 +11,7 @@ const getWeatherInfo = (location, message_1, message_2, message_3, message_4) =>
             message_2.textContent = 'Feels Like ' + data.feelslike + ' degrees'
             message_3.textContent = 'Location is ' + data.location
             var time = ''
-            if(data.is_day == 'no') {
+            if(data.is_day == 'no') { 
                 time = 'day'
                 
             } else {

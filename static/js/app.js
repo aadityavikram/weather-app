@@ -12,10 +12,10 @@ const getWeatherInfo = (location, message_1, message_2, message_3, message_4) =>
             message_3.textContent = 'Location is ' + data.location
             var time = ''
             if(data.is_day == 'no') { 
-                time = 'day'
+                time = 'night'
                 
             } else {
-                time = 'night'
+                time = 'day'
             }
             message_4.textContent = 'It is ' + time + ' here right now!'
         }

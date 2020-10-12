@@ -59,3 +59,50 @@ button {
     color: white;
     padding: 8px;
 }
+
+#weatherTable {
+    display: none;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    max-width: 650px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#weatherTable tr th {
+    background-color: red;
+    color: #ffffff;
+    text-align: left;
+}
+
+#weatherTable tr td {
+    background-color: white;
+    color: black;
+    text-align: left;
+}
+
+#weatherTable th,
+#weatherTable td {
+    padding: 12px 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+  
+@media only screen and (max-width: 600px) {
+    /* For tablets: */
+    #weatherTable {
+        max-width: 325px;
+    }
+    .main-content {
+        max-width: 325px;
+        margin: 0 10%;
+        padding: 0;
+    }
+    body {
+        min-height: 95vh;
+    }
+}

@@ -35,8 +35,7 @@ const aboutPage = (req, res) => {
         title: 'About',
         name: 'Aaditya Vikram',
         image: '/img/robot.png',
-        alt: 'robot',
-        description: 'Powered By <a href="https://www.mapbox.com/">Mapbox</a> and <a href="https://weatherstack.com/">WeatherStack</a>' 
+        alt: 'robot'
     })
 }
 

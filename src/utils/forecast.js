@@ -1,16 +1,10 @@
 const request = require('request')
 
-const weatherCallback = (error, res, {temperature, feelslike, location, address, is_day} = {}) => {
+const weatherCallback = (error, res, {temperature, feelslike, location, address, is_day, timezone, localTime, latitude, longitude} = {}) => {
     if (error) {
         return res.send({error})
     } else {
-        return res.send({
-            temperature,
-            feelslike,
-            location,
-            address,
-            is_day
-        })
+        return res.send({temperature, feelslike, location, address, is_day, timezone, localTime, latitude, longitude})
     }
 }
 
@@ -26,11 +20,14 @@ const weatherData = (latitude, longitude, location, res, address, callback) => {
             callback('Cannot find weather data for coordinates = [' + latitude + ',' + longitude + ']!', res, undefined)
         }
         else {
+            const locationDict = body['location']
+            const timezone = locationDict['timezone_id']
+            const localTime = locationDict['localtime']
             const current = body['current']
             const temperature = current['temperature']
             const feelslike = current['feelslike']
             const is_day = current['is_day']
-            callback(undefined, res, {temperature, feelslike, location, address, is_day})
+            callback(undefined, res, {temperature, feelslike, location, address, is_day, timezone, localTime, latitude, longitude})
         }
     })
 }

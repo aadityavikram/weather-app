@@ -44,7 +44,7 @@ const helpPage = (req, res) => {
     res.render('help', {
         title: 'Help',
         name: 'Aaditya Vikram',
-        description: 'This is Help Page'
+        description: 'Enter your address (along with state and country) in search bar on Home page and press Enter or click on Search! button. Weather Info will be output on the Home Page itself.'
     })
 }
 

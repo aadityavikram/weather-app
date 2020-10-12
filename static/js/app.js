@@ -11,13 +11,6 @@ const getWeatherInfo = (location, message_1, message_2, message_3, message_4, me
         else {
             message_1.style.display = 'none'
             weatherTable.style.display = 'flex'
-            // message_2.textContent = 'Temperature is ' + data.temperature + ' degrees F'
-            // message_3.textContent = 'Feels Like ' + data.feelslike + ' degrees F'
-            // message_4.textContent = 'Location is ' + data.location
-            // message_5.textContent = 'Timezone is ' + data.timezone
-            // message_6.textContent = 'Local Time is ' + data.localTime
-            // message_7.textContent = 'Latitude is ' + data.latitude + ' degrees'
-            // message_8.textContent = 'Longitude is ' + data.longitude + ' degrees'
             message_2.textContent = data.temperature
             message_3.textContent = data.feelslike
             message_4.textContent = data.location
@@ -32,7 +25,6 @@ const getWeatherInfo = (location, message_1, message_2, message_3, message_4, me
             } else {
                 time = 'day'
             }
-            // message_9.textContent = 'It is ' + time + ' here right now!'
             message_9.textContent = time
         }
     })

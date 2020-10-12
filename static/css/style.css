@@ -105,4 +105,7 @@ button {
     body {
         min-height: 100vh;
     }
+    footer {
+        margin-bottom: 10px;
+    }
 }

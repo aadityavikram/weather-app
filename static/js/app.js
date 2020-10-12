@@ -6,6 +6,7 @@ const getWeatherInfo = (location, message_1, message_2, message_3, message_4, me
     fetch('/weather?address=' + decodeURIComponent(location)).then((response) => {
     response.json().then((data) => {
         if(data.error) {
+            message_1.style.display = 'flex'
             message_1.textContent = data.error
         }
         else {
@@ -47,5 +48,6 @@ const weatherTable = document.querySelector('#weatherTable')
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const location = search.value
+    weatherTable.style.display = 'none'
     getWeatherInfo(location, message_1, message_2, message_3, message_4, message_5, message_6, message_7, message_8, message_9, weatherTable)
 })

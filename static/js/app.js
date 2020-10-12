@@ -6,11 +6,10 @@ const getWeatherInfo = (location, message_1, message_2, message_3, message_4, me
     fetch('/weather?address=' + decodeURIComponent(location)).then((response) => {
     response.json().then((data) => {
         if(data.error) {
-            message_1.style.display = 'flex'
             message_1.textContent = data.error
         }
         else {
-            message_1.style.display = 'none'
+            message_1.textContent = ''
             weatherTable.style.display = 'flex'
             message_2.textContent = data.temperature
             message_3.textContent = data.feelslike
